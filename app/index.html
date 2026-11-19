@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">LA</div>
+    <div>
+      <h1>Leonida Trophy Atlas</h1>
+      <p class="sub">GTA VI on PlayStation 5 — every trophy, a guide in our own words, and a tracker that keeps your progress.</p>
+    </div>
+  </div>
+  <div class="progress" id="progressBox">
+    <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+    <div class="counts" id="gradeCounts"></div>
+  </div>
+</header>
+
+<nav class="views" aria-label="Sections">
+  <button type="button" id="viewGuideBtn" class="view-btn active">Guide &amp; tracker</button>
+  <button type="button" id="viewRoadmapBtn" class="view-btn">Roadmap to the platinum</button>
+</nav>
+
+<div class="warn" id="missableBanner">
+  <strong>One thing can be missed.</strong>
+  <span>Positive Mental Attitude — in Chapter 1, after the mission “Down to Earth”, talk to Lucia in the kitchen in the morning, follow her to the balcony and choose “Accept” to meditate. After Chapter 1 that chance is gone. Everything else stays available after the story.</span>
+  <button type="button" id="missableJump">Show it</button>
+</div>
+
+<section id="guideView" class="guide-view">
+  <div class="toolbar">
+    <label class="search">Search <input id="search" type="search" placeholder="Trophy, mission, activity…" autocomplete="off"></label>
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="chip active">All 55</button>
+      <button type="button" data-kind="story" class="chip">Story</button>
+      <button type="button" data-kind="missable" class="chip">Missable</button>
+      <button type="button" data-kind="collectible" class="chip">Collectibles</button>
+      <button type="button" data-kind="activity" class="chip">Activities</button>
+      <button type="button" data-kind="online" class="chip">Online</button>
+    </div>
+    <label class="spoiler"><input type="checkbox" id="spoilerToggle"> Hide story spoilers</label>
+  </div>
+
+  <div class="layout">
+    <main>
+      <p class="list-note" id="listNote"></p>
+      <ul class="trophies" id="trophyList"></ul>
+      <div class="empty" id="emptyState" hidden>
+        <strong>No online trophies.</strong>
+        <span>All 55 trophies are single-player and offline — there is nothing to track here. (Source: PowerPyx, GTA 6 Trophy Guide &amp; Roadmap.)</span>
+      </div>
+    </main>
+    <aside class="detail" id="detail" aria-live="polite">
+      <p class="detail-hint">Pick a trophy on the left to read its guide and sources.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="roadmapView" class="roadmap-view" hidden>
+  <div class="roadmap-head">
+    <h2 id="roadmapTitle">Roadmap to the platinum</h2>
+    <p id="roadmapEstimate"></p>
+    <p class="roadmap-save" id="roadmapSave"></p>
+  </div>
+  <ol class="stages" id="stageList"></ol>
+  <p class="roadmap-missable" id="roadmapMissable"></p>
+  <p class="roadmap-sources" id="roadmapSources"></p>
+</section>
+
+<footer class="foot">
+  <div class="actions">
+    <button type="button" id="exportBtn">Export progress (.json)</button>
+    <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+    <button type="button" id="resetBtn">Clear all ticks</button>
+  </div>
+  <p>Official trophy names, descriptions and grades are shown as PlayStation publishes them. Every guide is written in our own words for this atlas and cites its sources beside it — a source is named and linked, never copied. Four trophies are still unconfirmed by every guide we checked; this atlas says so plainly instead of inventing a method. Progress is saved in your browser only (localStorage); nothing leaves your device. No Rockstar logo, artwork or game screenshots are used here — the look is our own.</p>
+  <p class="fine">Sources for the list and the methods: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap; KeenGamer — GTA 6 Trophy Guide &amp; Platinum Roadmap; Output Lag — GTA 6 Trophy List; GTA Zone — GTA 6 Trophy List. List as published 18 Nov 2026.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
